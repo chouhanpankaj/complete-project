@@ -1,0 +1,41 @@
+<div id="fh5co-main">
+    <div class="fh5co-narrow-content">
+        <div class="container main-section">
+            <div class="col-md-4 col-sm-2 col-xxs-12 work-item">
+            </div>
+            <div class="row">
+                <div class="col-lg-8 pb-2">
+                    <h4>Shoping Cart</h4>
+                </div>
+                <div class="col-lg-8 pl-3 pt-3" >
+                    <table class="table table-hover border bg-white">
+                        <thead>
+                              <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th style="width:10%;">Quantity</th>
+                                <th>Subtotal</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let c of cartitem'>
+                                
+                                <app-cartproduct pid={{c.id}} qty={{c.qty}}></app-cartproduct>
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><a href="#" class="btn btn-warning text-white"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                                
+                                <td class="hidden-xs text-center" style="width:10%;"><strong>Total : 47,000</strong></td>
+                                <td><button class="btn btn-success btn-block" (click)='checkout(cartitem)'>Checkout <i class="fa fa-angle-right"></i></button></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

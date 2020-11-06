@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-lg-12   grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8">
+                        <h4 class="card-title">Customer Table </h4>
+                            <p class="card-description"> All customers list</p>
+                    </div>
+                    <!-- <div class="col-md-4 col-sm-4">
+                        <button type="button" class="btn btn-gradient-primary btn-fw" routerLink="/addcategory">Add category</button>
+                    </div> -->
+                </div>
+                <table class="table table-bordered">
+                    <thead>  
+                        <tr>
+                            <th> Id </th>
+                            <th> Customer Name </th>
+                            <th> Customer Email </th>
+                            <th> Customer Phone </th>
+                            <th> Customer Address </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-info" *ngFor='let user of customer; let i = index'>
+                            <td>{{i+1}}</td>
+                            <td> {{user.name}} </td>
+                            <td> {{user.email}} </td>
+                            <td> {{user.phone}} </td>
+                            <td> {{user.address}} </td>
+                                
+                        </tr>           
+                    </tbody>            
+                </table>
+            </div>
+        </div>
+    </div> 
+</div>

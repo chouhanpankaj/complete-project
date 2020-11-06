@@ -1,0 +1,30 @@
+<div id="fh5co-main">
+
+    <div class="fh5co-narrow-content">
+        <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Choose products from categories.</h2>
+        <div class="row animate-box" data-animate-effect="fadeInLeft">
+            <div class="btn-group">
+                <button *ngFor="let c of category" (click)='getProductsWithCat(c.id)' type="button" class="btn btn-primary">{{ c.category_name }}</button>
+            </div>
+            <div class="clearfix visible-md-block visible-sm-block"></div>
+        </div>
+    </div>
+    
+    <hr>
+    <hr>
+
+    <div class="fh5co-narrow-content">
+        <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Products</h2>
+        <div class="row animate-box" data-animate-effect="fadeInLeft">
+            <div class="col-md-3 col-sm-2 col-xxs-12 work-item" *ngFor='let p of products'>
+                <a>
+                    <img src="{{server + '/uploads/' + p.product_image}}" alt="image.jpg" class="img-responsive">
+                    <h3 class="fh5co-work-title">{{p.product_name}}</h3>
+                    <h6>{{p.product_price}} Rs</h6>
+                    <button class="btn btn-primary" (click)='addToCart(p.id)'>Add to Cart</button>
+                </a>
+            </div>
+            <div class="clearfix visible-md-block visible-sm-block"></div>
+        </div>
+    </div>
+

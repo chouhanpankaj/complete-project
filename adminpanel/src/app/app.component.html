@@ -1,0 +1,46 @@
+
+<div class="container-scroller" *ngIf=" entrycard !=null ">
+
+    <app-show-category (logoutevent)="tokenChange($event)"></app-show-category>
+
+    <div class="container-fluid page-body-wrapper">
+        <app-menu></app-menu>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="content-wrapper">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container-scroller" *ngIf="entrycard==null">
+      <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth">
+          <div class="row flex-grow">
+            <div class="col-lg-4 mx-auto">
+              <div class="auth-form-light text-left p-5">
+                <div class="brand-logo">
+                  <img src="../../assets/images/logo.svg">
+                </div>
+                <h4>Hello! let's get started</h4>
+                <h6 class="font-weight-light">Sign in to continue.</h6>
+
+                <form class="pt-3" #frm = 'ngForm' (submit)=loginUser(frm)>
+                  <div class="form-group">
+                    <input type="email" class="form-control form-control-lg" placeholder="Username" name='email' ngModel>
+                  </div>
+                  <div class="form-group">
+                    <input type="" class="form-control form-control-lg" placeholder="Password" name='password' ngModel>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">Login</button>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-lg-12   grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8">
+                        <h4 class="card-title">Category Table </h4>
+                            <p class="card-description"> Available Categories</p>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <button type="button" class="btn btn-gradient-primary btn-fw" routerLink="/addcategory">Add category</button>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead>  
+                        <tr>
+                            <th> Category Id </th>
+                            <th> Category Name </th>
+                            <!-- <th> Category Status </th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-info" *ngFor='let cat of category; let i = index'>
+                            <td>{{i+1}}</td>
+                            <td> {{cat.category_name}} </td>
+                            <!-- <td> {{cat.status}} </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+</div>

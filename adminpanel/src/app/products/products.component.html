@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 col-xs-12" >
+                        <h4 class="card-title">Products Table </h4>
+                            <p class="card-description"> Available Products</p>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                            <select  class='form-control' #cat>
+                                <option value="">Choose category</option>
+                                <option *ngFor="let cat of category" value="{{cat.id}}" >{{cat.category_name}}</option>
+                            </select>
+                        
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <button class="btn btn-gradient-primary btn-fw" (click)='getProductsWithCat(cat.value)'>Search</button>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <button type="button" class="btn btn-gradient-primary btn-fw" routerLink="/addproducts">Add Product</button>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead>  
+                        <tr>
+                            <th> Product Id </th>
+                            <th> Product Name </th>
+                            <th> Product Price </th>
+                            <th> Product Description </th>
+                            <th>Upload Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-info" *ngFor='let pro of products; let i=index'>
+                            <td> {{i+1}} </td>
+                            <td> {{pro.product_name}}</td>
+                            <td> {{pro.product_price}}</td>
+                            <td> {{pro.product_desc}}</td>
+                            <td>
+                                <input type="file" class='form-control' (change)='handleFileInput($event.target.files)'><br><br>
+                                
+                                <button class='btn btn-info' (click)="upload(pro.id)">Upload</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+</div>
