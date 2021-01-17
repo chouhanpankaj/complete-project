@@ -22,7 +22,7 @@ class CategoryController extends Controller
     {
         $status = $req->input('status');
         $list = Category::where('status', $status)->get();
-        return json_encode($list);    
+        return json_encode($list);
     }
 
     // show category by with specific category id
